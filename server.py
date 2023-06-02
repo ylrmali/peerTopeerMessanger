@@ -15,7 +15,9 @@ while True:
   while True:
     data = conn.recv(1024)
     if not data: break
-    from_client += data.decode('utf8')
+    print(data)
+    # from_client += data.decode('utf8')
+    from_client += data
     print (from_client) 
 
     msg = input('message: ').rjust(32).encode()
