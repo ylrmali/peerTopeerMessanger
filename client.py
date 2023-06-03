@@ -24,7 +24,7 @@ while True:
             client.send(encrypted_string)
 
             from_server = client.recv(1024)
-            print (from_server.decode())
+            print (from_server)
             client.close()
         except OSError as error:
             print(error)
