@@ -7,7 +7,7 @@ from Crypto.Util.Padding import pad, unpad
 key = b'fidauth123456789'
 
 serv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-serv.bind(('192.168.11.214', 5555))
+serv.bind(('192.168.0.17', 5555))
 serv.listen(5)
 while True:
   conn, addr = serv.accept()
@@ -17,8 +17,8 @@ while True:
     if not data: break
     print(data)
     # from_client += data.decode('utf8')
-    from_client += data
-    print (from_client) 
+    # from_client += data
+    print (data) 
 
     msg = input('message: ').rjust(32).encode()
     cipher = AES.new(key, AES.MODE_ECB)
